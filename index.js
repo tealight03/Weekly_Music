@@ -1,12 +1,21 @@
 const express = require('express');
-//const mysql = require('mysql');
-//const dbconfig = require('./config/dbinfo.js');
-//const connection = mysql.createConnection(dbconfig);
 const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/html/main.html');
+});
+
+app.get('/:name', (req, res) => {
+    res.sendFile(__dirname + '/html/'+req.params.name+'.html');
+});
+
+app.get('/css/:name', (req, res) => {
+    res.sendFile(__dirname + '/css/'+req.params.name);
+});
+
+app.get('/js/:name', (req, res) => {
+    res.sendFile(__dirname + '/js/'+req.params.name);
 });
 
 app.get('/images/:name', (req, res) => {
