@@ -9,7 +9,7 @@ const port = 3000;
 
 app.use(
     cors({
-        origin: 'https://miny.store',
+        origin: 'https://ymin.store',
         credentials: true,
     })
 );
