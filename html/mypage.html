@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mypage</title>
-    <link rel="stylesheet" href="../css/.css">
+    <link rel="stylesheet" href="../css/mypage.css">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">   
         $(document).ready( function() {
@@ -17,13 +17,21 @@
     <!--header-->
     <div id="headers"></div>
     <div>
-        <img id="person_img" src="../images/person img.png" alt="person img">
-        <button>
-            이미지 변경하기
-        </button>
-    </div>
-    <div>
-
+        <div class="grid-container">
+            <div class="grid-item item1">
+                <img id="person_img" src="../images/personimg.png" alt="person img">
+            </div>
+            <div class="grid-item item2">
+                <button>
+                    이미지 변경하기
+                </button>
+            </div>
+            <div class="grid-item item3">
+                <h5>아이디</h5>
+                <h5>이메일</h5>
+                <h5>전화번호</h5>
+            </div>
+        </div>
     </div>
 </body>
 </html>
