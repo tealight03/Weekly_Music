@@ -7,5 +7,41 @@
 
 #logo_img{
     width: 150px;
-    height: 150px;
+    height: 50px;
+    margin: 15px;
+}
+
+#search_btn{
+    align-items: center;
+    place-items: center;
+    display: flex;
+    font: bold 10px, serif;
+    font-weight: 1000;
+    background-color: white;
+    width: 90px;
+    height: 40px;
+    border: 0px;
+}
+
+#search_img{
+    width: 20px;
+    height: 20px;
+}
+
+#login_btn{
+    font: bold 10px, serif;
+    font-weight: 1000;
+    background-color: white;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+#mypage_btn{
+    font: bold 10px, serif;
+    font-weight: 900;
+    background-color: white;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
 }
