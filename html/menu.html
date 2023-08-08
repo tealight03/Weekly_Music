@@ -1,34 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>menu</title>
-</head>
-<body>
-    <link rel="stylesheet" href="../css/menu.css">
+<header>
+    <link rel="stylesheet" href="/css/menu.css">
+    
     <div class="header_menu">
         <div>
-            <a href="../html/main.html">
-                <img id="logo_img" src="../images/Weekly Music-logo1.png" alt="site's logo">
-            </a>
+            <img id="logo_img" src="../images/Weekly Music-logo1.png" alt="site's logo">
         </div>
         <div></div>
         <div>
-            <a href="../html/search.html">
-                <button type="button" class="btn btn-info">검색하기</button>
-            </a>
+            <button id="search_btn" type="button" onclick="location.href='/search'">검색하기</button>
         </div>
         <div>
-            <a href="../html/login.html">
-                <button type="button" class="btn btn-default">로그인</button>
-            </a>
+            <button id="login_btn" type="button" onclick="location.href='/login'">로그인</button>
         </div>
         <div>
-            <a href="../html/mypage.html">
-                <button type="button" class="btn btn-default">마이페이지</button>
-            </a>
+            <button id="mypage_btn" type="button" onclick="location.href='/mypage'">마이페이지</button>
         </div>
     </div>
-</body>
-</html>
+</header>
