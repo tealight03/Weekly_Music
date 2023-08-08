@@ -3,6 +3,7 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
+const { createConnection } = require('net');
 
 const app = express();
 const port = 3000;
@@ -16,6 +17,13 @@ app.use(
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/html/main.html');
+});
+
+app.get('/api', (req, res) => {
+    connection.query('SELECT * FROM user', (error, rows) => {
+        if (error) throw error;
+        res.send(rows);
+    })
 });
 
 app.get('/:name', (req, res) => {

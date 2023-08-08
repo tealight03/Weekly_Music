@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mypage</title>
-    <link rel="stylesheet" href="../css/.css">
+    <link rel="stylesheet" href="../css/mypage.css">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">   
         $(document).ready( function() {
@@ -12,18 +12,47 @@
             // $("#footers").load("common/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
         });
     </script>
+    <!--DB 가져오는 기능 추가 / index.js에도 /api로 get함수..? 처리해놨음-->
+    <script>
+        fetch('http://ymin.store:3000/api')
+        .then((res) => res.json())
+        .then((res) => {
+            const table = document.querySelector('table');
+            res.forEach((row) => {
+                const tr = document.createElement('tr');
+                ['id', 'name', 'age'].forEach((key) => {
+                    const cell = document.createElement('td');
+                    cell.textContent = row[key];
+                    tr.appendChild(cell);
+                    });
+                table.appendChild(tr);
+            });
+        });
+    </script>
 </head>
 <body>
     <!--header-->
     <div id="headers"></div>
     <div>
-        <img id="person_img" src="../images/person img.png" alt="person img">
-        <button>
-            이미지 변경하기
-        </button>
-    </div>
-    <div>
-
+        <div class="grid-container">
+            <div class="grid-item item1">
+                <img id="person_img" src="../images/personimg.png" alt="person img">
+            </div>
+            <div class="grid-item item2">
+                <button>
+                    이미지 변경하기
+                </button>
+            </div>
+            <div class="grid-item item3">
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>age</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 </body>
 </html>
