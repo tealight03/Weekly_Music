@@ -12,6 +12,23 @@
             // $("#footers").load("common/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
         });
     </script>
+    <!--DB 가져오는 기능 추가 / index.js에도 /api로 get함수..? 처리해놨음-->
+    <script>
+        fetch('http://ymin.store:3000/api')
+        .then((res) => res.json())
+        .then((res) => {
+            const table = document.querySelector('table');
+            res.forEach((row) => {
+                const tr = document.createElement('tr');
+                ['id', 'name', 'age'].forEach((key) => {
+                    const cell = document.createElement('td');
+                    cell.textContent = row[key];
+                    tr.appendChild(cell);
+                    });
+                table.appendChild(tr);
+            });
+        });
+    </script>
 </head>
 <body>
     <!--header-->
@@ -27,9 +44,13 @@
                 </button>
             </div>
             <div class="grid-item item3">
-                <h5>아이디</h5>
-                <h5>이메일</h5>
-                <h5>전화번호</h5>
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>age</th>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
