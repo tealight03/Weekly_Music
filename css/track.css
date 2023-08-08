@@ -1,10 +1,12 @@
 body{
-    display: grid;
-    grid-template-columns: 100%;
-    justify-content: center;
     height:100vh;
 }
 
+#music-player{
+    display: grid;
+    grid-template-columns: 100%;
+    place-items: center;
+}
 
 section{
     width:600px;
