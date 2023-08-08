@@ -8,7 +8,7 @@
 
     <!--DB 가져오는 기능 추가 / index.js에도 /api로 get함수..? 처리해놨음-->
     <script>
-        fetch('http://ymin.store:3000/api')
+        fetch('http://www.weeklymusic.store:3000/api')
         .then((res) => res.json())
         .then((res) => {
             const table = document.querySelector('table');
@@ -34,16 +34,23 @@
                 <img id="person_img" src="../images/personimg.png" alt="person img">
             </div>
             <div class="grid-item item2">
-                <button>
+                <button type="button" class="btn btn-default">
                     이미지 변경하기
                 </button>
             </div>
             <div class="grid-item item3">
                 <table>
                     <tr>
-                        <th>id</th>
-                        <th>name</th>
-                        <th>age</th>
+                        <th>아이디</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>이메일</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>전화번호</th>
+                        <td></td>
                     </tr>
                 </table>
             </div>
