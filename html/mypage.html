@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mypage</title>
     <link rel="stylesheet" href="../css/mypage.css">
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript">   
-        $(document).ready( function() {
-            $("#headers").load("../html/menu.html");  // 원하는 파일 경로를 삽입하면 된다
-            // $("#footers").load("common/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
-        });
-    </script>
+
     <!--DB 가져오는 기능 추가 / index.js에도 /api로 get함수..? 처리해놨음-->
     <script>
         fetch('http://ymin.store:3000/api')
@@ -32,7 +26,8 @@
 </head>
 <body>
     <!--header-->
-    <div id="headers"></div>
+    <div id="header_container"></div>
+
     <div>
         <div class="grid-container">
             <div class="grid-item item1">
@@ -54,5 +49,7 @@
             </div>
         </div>
     </div>
+
+    <script src="../js/inputHeader.js"></script>
 </body>
 </html>

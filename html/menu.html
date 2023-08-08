@@ -3,20 +3,20 @@
 
     <div class="header_menu">
         <div>
-            <img id="logo_img" src="../images/WeeklyMusic-logo3.png" alt="site's logo">
+            <img id="logo_img" src="../images/WeeklyMusic-logo3.png" alt="site's logo" onclick="location.href='/'">
         </div>
         <div></div>
-        <div>
-            <button id="search_btn" type="button" onclick="location.href='/search'">
-                <img id="search_img" src="../images/search-Icon.png" alt="search logo">
-                <div>검색하기</div>
-            </button>
-        </div>
-        <div>
-            <button id="login_btn" type="button" onclick="location.href='/login'">로그인</button>
-        </div>
-        <div>
-            <button id="mypage_btn" type="button" onclick="location.href='/mypage'">마이페이지</button>
+        <div class="btn_group">
+                <button id="search_btn" type="button" onclick="location.href='/search'">
+                    <img id="search_img" src="../images/search-Icon.png" alt="search logo">
+                    <div>검색하기</div>
+                </button>
+            <div>
+                <button id="login_btn" type="button" onclick="location.href='/login'">로그인</button>
+            </div>
+            <div>
+                <button id="mypage_btn" type="button" onclick="location.href='/mypage'">마이페이지</button>
+            </div>
         </div>
     </div>
 </header>

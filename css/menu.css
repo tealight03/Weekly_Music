@@ -2,7 +2,16 @@
     display: grid;
     align-items: center;
     place-items: center;
-    grid-template-columns: 10% 60% 10% 10% 10%;
+    grid-template-columns: 20% 50% 30%;
+}
+
+.btn_group{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: stretch;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #logo_img{
@@ -35,6 +44,7 @@
     width: 100px;
     height: 40px;
     border-radius: 20px;
+    padding: 10px;
 }
 
 #mypage_btn{
