@@ -1,0 +1,54 @@
+.carousel-container{
+    display: flex;
+    align-items: center;
+}
+
+.window{
+    width: 800px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.wrapper-swip{
+    display: flex;
+    margin:15px;
+}
+
+#item{
+    display: grid;
+    place-content: center;
+    padding: 15px;
+    margin: 10px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 15px;
+    border: 0px;
+}
+
+#cover{
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    border: 0px;
+}
+
+#title{
+    font-weight: 1000;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+#artist{
+    font-size: 12px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+button{
+    margin: 5px;
+}
+
+#arrow{
+    width: 30px;
+    height: 30px;
+    margin:15px;
+}

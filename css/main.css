@@ -1,3 +1,21 @@
 .carousel-inner{
     max-height:400px;
 }
+
+section{
+    display: grid;
+    place-content: center;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+#text{
+    font-weight: 1000;
+    font-size: 20px;
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+#carousel_container{
+    padding-bottom: 20px;
+}
