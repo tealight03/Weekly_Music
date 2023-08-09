@@ -1,36 +1,62 @@
-.grid-container {
-    display: grid;
-    gap: 5px;
-    background-color: cornflowerblue;
-    padding-left: 0px;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
+#theme {
+    margin-left: 200px;
 }
 
-.grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
+#music {
+    width: 100px;
+    height: 100px;
+}
+
+#hamburger {
+    width: 60px;
+    height: 60px;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* 가로 방향으로 중앙 정렬 */
+    align-items: center; /* 세로 방향으로 중앙 정렬 */
+    justify-content: space-between;
+}
+
+.content1 {
+    margin-right: 100px;
+    padding-top: 30px;
+    padding-right: 670px;
+    align-items: center;
     text-align: left;
-    padding: 0px;
-    font-size: 18px;
 }
 
-.item1 {
-    grid-column: 1;
-    grid-row: 1;
+.content2 {
+    margin-right: 100px;
+    padding-top: 30px;
+    padding-right: 540px;
+    align-items: center;
+    text-align: left;
 }
 
-.item2 {
-    grid-column: 1;
-    grid-row: 2;
+.content3 {
+    margin-right: 100px;
+    padding-top: 30px;
+    padding-right: 490px;
+    align-items: center;
+    text-align: left;
 }
 
-.item3 {
-    grid-column: 2;
-    grid-row: 1 / span 2;
+.content4 {
+    margin-right: 100px;
+    padding-top: 30px;
+    padding-right: 710px;
+    align-items: center;
+    text-align: left;
 }
 
-#person_img{
-    width: 200px;
-    height: 200px;
+.content5 {
+    margin-right: 100px;
+    padding-top: 30px;
+    padding-right: 550px;
+    align-items: center;
+    text-align: left;
 }
