@@ -4,58 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    <header>
-        <img src="../images/Weekly Music-logo1.png" alt="site's logo">
-    </header>
-    <section>
-        <form>
-            <div class="id-form">
-                <div>
-                    <label for="id">아이디</label>
+    <div class="wrapper">
+        <header>
+            <img src="../images/WeeklyMusic-logo1.png" alt="site's logo" onclick="location.href='/'">
+        </header>
+        <section>
+            <form>
+                <div class="id-form">
+                    <div>
+                        <label for="id">아이디</label>
+                    </div>
+                    <input class="form-control" id="inputdefault" type="text" placeholder="아이디를 입력하세요">
                 </div>
-                <input class="form-control" id="inputdefault" type="text">
-            </div>
-            <div class="pw-form">
-                <div>
-                    <label for="password">비밀번호</label>
+                <div class="pw-form">
+                    <div>
+                        <label for="password">비밀번호</label>
+                    </div>
+                    <input class="form-control" id="inputdefault" type="text" placeholder="비밀번호를 입력하세요">
                 </div>
-                <input class="form-control" id="inputdefault" type="text">
-            </div>
-            <div class="login-submit">
-                <button class="login-button">
-                    <span>로그인</span>
-                </button>
-            </div>
-            <div>
-                <a>
-                    <a href="../signup">
+                <div class="login-submit">
+                    <button class="login-button">
+                        <span>로그인</span>
+                    </button>
+                </div>
+                <div>
+                    <a class="sign-up" href="../signup">
                         <p>계정이 없으신가요?</p>
                     </a>
-                </a>
+                </div>
+            </form>
+        </section>
+        <section>
+            <label for="sns-login">소셜 로그인</label>
+            <div class="sns-login-list">
+                <div>
+                    <button id="sns-login-button" type="button">
+                        <div id="btn-content">
+                            <img id="btn-img-google" src="../images/google-logo.png" alt="google logo">
+                            <span>구글 계정 로그인</span>
+                        </div>
+                    </button>
+                </div>
+                <vid>
+                    <button id="sns-login-button" type="button">
+                        <div id="btn-content">
+                            <img id="btn-img-naver" src="../images/naver-logo.png" alt="naver logo">
+                            <span>네이버 계정 로그인</span>
+                        </div>
+                    </button>
+                </vid>
+                <vid>
+                    <button id="sns-login-button" type="button">
+                        <div id="btn-content">
+                            <img id="btn-img-kakao" src="../images/kakao-logo.png" alt="kakao logo">
+                            <span>카카오 계정 로그인</span>
+                        </div>
+                    </button>
+                </vid>
             </div>
-        </form>
-    </section>
-    <section>
-        <label for="sns-login">소셜 로그인</label>
-        <ul class="sns-login-list">
-            <li>
-                <button>
-                    <span>구글 계정 로그인</span>
-                </button>
-            </li>
-            <li>
-                <button>
-                    <span>네이버 계정 로그인</span>
-                </button>
-            </li>
-            <li>
-                <button>
-                    <span>카카오 계정 로그인</span>
-                </button>
-            </li>
-        </ul>
-    </section>
+        </section>
+    </div>
 </body>
 </html>

@@ -1,0 +1,99 @@
+body{
+    display: grid;
+    grid-template-columns: 100%;
+    place-items: center;
+}
+
+.wrapper{
+    width:300px;
+    padding:25px 30px;
+}
+
+header{
+    display: grid;
+    place-content: center;
+}
+
+section{
+    display: grid;
+    place-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+label{
+    font-size: 15px;
+    font-weight: 1000;
+}
+
+.id-form{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#inputdefault{
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.pw-form{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.login-button{
+    margin-top: 10px;
+    width: 260px;
+    height: 35px;
+    border:0px;
+    background-color: rgb(104, 207, 255);
+    border-radius: 15px;
+    font-weight: 1000;
+}
+
+.sign-up{
+    display: grid;
+    place-content: center;
+}
+
+.sns-login-list{
+    display: grid;
+    place-content: center;
+    list-style: none;
+}
+
+#sns-login-button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 260px;
+    height: 35px;
+    border-radius: 15px;
+    font-weight: 1000;
+    background-color: white;
+    display: grid;
+    place-content: center;
+}
+
+#btn-img-google{
+    width: 30px;
+    height: 30px;
+    padding-right: 15px;
+}
+
+#btn-img-naver{
+    width: 28px;
+    height: 28px;
+    padding-right: 5px;
+}
+
+#btn-img-kakao{
+    width: 25px;
+    height: 25px;
+    padding-right: 5px;
+}
+
+#btn-content{
+    display: flex;
+    place-items: center;
+}

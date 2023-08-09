@@ -21,13 +21,11 @@
 }
 
 #search_btn{
-    align-items: center;
     place-items: center;
     display: flex;
-    font: bold 10px, serif;
     font-weight: 1000;
     background-color: white;
-    width: 90px;
+    width: 100px;
     height: 40px;
     border: 0px;
 }
