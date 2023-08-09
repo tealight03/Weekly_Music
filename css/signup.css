@@ -1,0 +1,67 @@
+body{
+    display: grid;
+    grid-template-columns: 100%;
+    place-items: center;
+}
+
+.wrapper{
+    width:300px;
+    padding:25px 30px;
+}
+
+header{
+    display: grid;
+    place-content: center;
+}
+
+section{
+    display: grid;
+    place-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#name{
+    font-size: 15px;
+    font-weight: 1000;
+}
+
+#inputdefault{
+    width: 290px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: rgb(220, 220, 220);
+}
+
+#inputdefault-email{
+    width: 135px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: rgb(220, 220, 220);
+}
+
+#email-form{
+    display: flex;
+}
+
+#ex{
+    font-size: 13px;
+}
+
+.form-group{
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
+
+button{
+    width: 290px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: rgb(220, 220, 220);
+    font-weight: 1000;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
