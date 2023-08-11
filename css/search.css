@@ -1,0 +1,22 @@
+.search-container{
+    display: flex;
+    place-content: center;
+    margin-top: 50px;
+}
+
+.button{
+    background-color: white;
+    border: 0px;
+}
+
+#inputbox{
+    width: 400px;
+    height: 30px;
+    margin-right: 10px;
+    border: 0px;
+}
+
+#serchbutton{
+    width: 30px;
+    height: 30px;
+}
