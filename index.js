@@ -10,7 +10,7 @@ const port = 3000;
 
 app.use(
     cors({
-        origin: 'https://ymin.store',
+        origin: ['https://ymin.store', 'https://www.weeklymusic.store'],
         credentials: true,
     })
 );
