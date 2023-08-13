@@ -13,23 +13,21 @@
             <img src="../images/WeeklyMusic-logo1.png" alt="site's logo" onclick="location.href='/'">
         </header>
         <section>
-            <form>
+            <form action="/login" method="post">
                 <div class="id-form">
                     <div>
                         <label for="id">아이디</label>
                     </div>
-                    <input class="form-control" id="inputdefault" type="text" placeholder="아이디를 입력하세요">
+                    <input name="id" class="form-control" id="inputdefault" type="text" placeholder="아이디를 입력하세요">
                 </div>
                 <div class="pw-form">
                     <div>
                         <label for="password">비밀번호</label>
                     </div>
-                    <input class="form-control" id="inputdefault" type="text" placeholder="비밀번호를 입력하세요">
+                    <input name="pw" class="form-control" id="inputdefault" type="text" placeholder="비밀번호를 입력하세요">
                 </div>
                 <div class="login-submit">
-                    <button class="login-button">
-                        <span>로그인</span>
-                    </button>
+                    <input type="submit" class="login-button" value="로그인"></input>
                 </div>
                 <div>
                     <a class="sign-up" href="../signup">
