@@ -28,3 +28,10 @@ const artist = document.createElement("p");
 artist.className = "artist";
 artist.textContent = track[dataNum][1];
 detailSection.append(artist);
+
+if(document.cookie.indexOf('user=') !== -1){
+    const playList = document.querySelector(".play-list");
+    const list = document.createElement('div');
+    list.className = "list-item";
+    playList.append(list);
+}
