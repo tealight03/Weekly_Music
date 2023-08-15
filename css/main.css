@@ -12,8 +12,9 @@ section{
 #text{
     font-weight: 1000;
     font-size: 20px;
-    padding-top:15px;
-    padding-bottom:15px;
+    padding:10px;
+    padding-left: 100px;
+    padding-top: 30px;
 }
 
 #carousel_container{

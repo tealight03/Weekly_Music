@@ -4,7 +4,7 @@
 }
 
 .window{
-    width: 800px;
+    width: 100%;
     overflow-x: hidden;
     position: relative;
 }
@@ -25,14 +25,13 @@
 }
 
 #cover{
-    width: 150px;
-    height: 150px;
+    width: 220px;
     border-radius: 15px;
     border: 0px;
 }
 
 #title{
-    font-weight: 1000;
+    font-weight: 100;
     margin-top: 5px;
     margin-bottom: 2px;
 }
@@ -51,4 +50,12 @@ button{
     width: 30px;
     height: 30px;
     margin:15px;
+}
+
+.prev-arrow{
+    padding-left: 100px;
+}
+
+.next-arrow{
+    padding-right: 100px;
 }

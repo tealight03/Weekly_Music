@@ -1,0 +1,22 @@
+.container{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.track{
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    align-items: center;
+}
+
+#cover-img{
+    width: 60%;
+}
+
+#title{
+    font-size: 20px;
+}
+
+#artist{
+    font-size: 15px;
+}
