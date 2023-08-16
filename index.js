@@ -97,6 +97,10 @@ app.get('/images/:name', (req, res) => {
     res.sendFile(__dirname + '/images/'+req.params.name);
 });
 
+app.get('/music/:name', (req, res) => {
+    res.sendFile(__dirname + '/music/'+req.params.name);
+});
+
 // listen
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);

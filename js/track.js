@@ -29,6 +29,9 @@ artist.className = "artist";
 artist.textContent = track[dataNum][1];
 detailSection.append(artist);
 
+const audio = document.querySelector("#main-audio");
+audio.src = "";
+
 if(document.cookie.indexOf('user=') !== -1){
     const playList = document.querySelector(".play-list");
     const list = document.createElement('div');
