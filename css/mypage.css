@@ -1,3 +1,10 @@
 #theme {
     margin-left: 200px;
 }
+
+#personal_img {
+    width: 100px;
+    height: 100px;
+    border: 50px;
+    margin: 30px;
+}
