@@ -17,7 +17,7 @@ for(var i = 0; i < track.length; i++){
 
     const wrapper = document.createElement("div");
     wrapper.className = "track"; 
-    (function(index) {
+    (function(index) { 
         wrapper.addEventListener('click', function() {
             location.href = '/track?data=' + index;
         });
