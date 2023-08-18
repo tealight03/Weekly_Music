@@ -17,3 +17,11 @@ exports.getPlaylist = (req, res) => {
         res.send(row);
     });
 };
+
+exports.getMusic = (req, res) => {
+    var sql = 'SELECT * FROM music';
+    connection.query(sql, (error, row) => {
+        if(error) throw error;
+        res.send(row);
+    })
+}

@@ -9,5 +9,6 @@ router.get('/', (req, res) => {
 
 router.get('/getUinfo', model.getUinfo);
 router.get('/getPlaylist', model.getPlaylist);
+router.get('/getMusic', model.getMusic);
 
 module.exports = router;
