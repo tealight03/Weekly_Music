@@ -9,3 +9,11 @@ exports.getUinfo = (req, res) => {
         res.send(row);
     });
 };
+
+exports.getPlaylist = (req, res) => {
+    var sql = 'SELECT * FROM playlist, music WHERE music_idmusic = idmusic';
+    connection.query(sql, (error, row) => {
+        if(error) throw error;
+        res.send(row);
+    });
+};
