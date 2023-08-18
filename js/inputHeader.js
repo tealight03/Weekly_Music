@@ -4,7 +4,7 @@ xhttp.onreadystatechange = function() {
         const headerContainer = document.getElementById("header_container");
         headerContainer.innerHTML = this.responseText;
 
-        // 스크립트 태그 동적으로 생성하여 추가
+        // 로그인, 로그아웃 버튼 변경
         const scripts = headerContainer.getElementsByTagName('script');
         for (let i = 0; i < scripts.length; i++) {
             const newScript = document.createElement('script');

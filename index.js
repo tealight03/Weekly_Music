@@ -32,13 +32,13 @@ app.use(
     })
 );
 
-const { createConnection } = require('net');
+//controller 연결
+var maincontroller = require('./controller/maincontroller.js');
+var apicontroller = require('./controller/apicontroller.js');
 
+app.use('/', maincontroller);
+app.use('/api', apicontroller);
 
-app.get('/', (req, res) => {
-    console.log(req.session);
-    res.sendFile(__dirname + '/html/main.html');
-});
 
 // 로그인 
 app.get('/login', (req, res) => {
@@ -72,33 +72,6 @@ app.get('/logout', (req, res) => {
             res.redirect('/');
         }
     });
-});
-
-app.get('/api', (req, res) => {
-    connection.query('SELECT * FROM user', (error, rows) => {
-        if (error) throw error;
-        res.send(rows);
-    })
-});
-
-app.get('/:name', (req, res) => {
-    res.sendFile(__dirname + '/html/'+req.params.name+'.html');
-});
-
-app.get('/css/:name', (req, res) => {
-    res.sendFile(__dirname + '/css/'+req.params.name);
-});
-
-app.get('/js/:name', (req, res) => {
-    res.sendFile(__dirname + '/js/'+req.params.name);
-});
-
-app.get('/images/:name', (req, res) => {
-    res.sendFile(__dirname + '/images/'+req.params.name);
-});
-
-app.get('/music/:name', (req, res) => {
-    res.sendFile(__dirname + '/music/'+req.params.name);
 });
 
 // listen
