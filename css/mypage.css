@@ -1,10 +1,20 @@
-#theme {
-    margin-left: 200px;
+#container{
+    display: grid;
+    grid-template-columns: 10% 20% 70%;
+    padding-bottom: 30px;
 }
 
-#personal_img {
-    width: 100px;
-    height: 100px;
-    border: 50px;
-    margin: 30px;
+#personal_img{
+    width: 80%;
+    padding: 15px;
+}
+
+#user-info{
+    padding: 15px;
+}
+
+#theme{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    padding-top: 30px;
 }
