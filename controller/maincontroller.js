@@ -28,7 +28,7 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/track', (req, res) => {
-    res.sendFile(path.join(__dirname, '../track/menu.html'));
+    res.sendFile(path.join(__dirname, '../html/track.html'));
 });
 
 router.get('/css/:name', (req, res) => {
