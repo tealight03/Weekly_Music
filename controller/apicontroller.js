@@ -11,4 +11,6 @@ router.get('/getUinfo', model.getUinfo);
 router.get('/getPlaylist', model.getPlaylist);
 router.get('/getMusic', model.getMusic);
 
+router.post('/signup', model.signup);
+
 module.exports = router;

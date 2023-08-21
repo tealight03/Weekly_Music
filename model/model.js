@@ -25,3 +25,21 @@ exports.getMusic = (req, res) => {
         res.send(row);
     })
 }
+
+exports.signup = (req, res) => {
+    const { id, pw, email, tel } = req.body;
+
+    const crypto = require('crypto');
+    const hashpw = crypto.createHash('sha256').update(pw).digest('hex');
+    
+    var sql = 'INSERT INTO user (userid, userpw, email, tel) VALUES (?, ?, ?, ?)';
+    connection.query(sql, [id, hashpw, email, tel], (error, result) => {
+        if (error) throw error;
+        if (result.affectedRows > 0) {
+            return res.redirect('/login');
+        } else {
+            alert("계정 생성 실패");
+            return res.redirect('/signup');
+        }
+    });
+}

@@ -34,14 +34,6 @@ section{
     background-color: rgb(220, 220, 220);
 }
 
-#inputdefault-email{
-    width: 135px;
-    height: 30px;
-    border-radius: 5px;
-    border: 0px;
-    background-color: rgb(220, 220, 220);
-}
-
 #email-form{
     display: flex;
 }
@@ -55,7 +47,7 @@ section{
     margin-bottom: 13px;
 }
 
-button{
+#submit{
     width: 290px;
     height: 40px;
     border-radius: 5px;
