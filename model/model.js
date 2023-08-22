@@ -51,3 +51,11 @@ exports.getRecMusic = (req, res) => {
         res.send(row);
     })
 }
+
+exports.getTodayMusic = (req, res) => {
+    var sql = 'SELECT * FROM music WHERE idmusic < 6';
+    connection.query(sql, (error, row) => {
+        if(error) throw error;
+        res.send(row);
+    })
+}
