@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
 router.get('/getUinfo', model.getUinfo);
 router.get('/getPlaylist', model.getPlaylist);
 router.get('/getMusic', model.getMusic);
+router.get('/getRecMusic', model.getRecMusic);
 
 router.post('/signup', model.signup);
 

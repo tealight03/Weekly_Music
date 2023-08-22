@@ -43,3 +43,11 @@ exports.signup = (req, res) => {
         }
     });
 }
+
+exports.getRecMusic = (req, res) => {
+    var sql = 'SELECT * FROM music WHERE music_singer = "BTS"';
+    connection.query(sql, (error, row) => {
+        if(error) throw error;
+        res.send(row);
+    })
+}
