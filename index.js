@@ -32,6 +32,10 @@ app.use(
     })
 );
 
+const mysql = require('mysql');
+const dbconfig = require('./config/dbinfo.js');
+const connection = mysql.createConnection(dbconfig);
+
 //controller 연결
 var maincontroller = require('./controller/maincontroller.js');
 var apicontroller = require('./controller/apicontroller.js');
@@ -39,29 +43,31 @@ var apicontroller = require('./controller/apicontroller.js');
 app.use('/', maincontroller);
 app.use('/api', apicontroller);
 
-
 // 로그인 
-app.get('/login', (req, res) => {
-    res.sendFile(__dirname + '/html/login.html');
-});
-
 app.post('/login', (req, res) => {
-    if (req.session.user ? req.session.user.id == 'test' : false) {
-        res.redirect('/');
-    }
-    else if(req.body.id == 'test' && req.body.pw == '1234') {
-        req.session.user = {
-            id: req.body.id,
-        };
+    const { id, pw } = req.body;
 
-        res.setHeader('Set-Cookie', ['user=' + req.body.id]);
-        res.redirect('/');
-    }
-    else {
+    const crypto = require('crypto');
+    const hashpw = crypto.createHash('sha256').update(pw).digest('hex'); 
+
+    const sql = 'SELECT * FROM user WHERE userid = ? AND userpw = ?';
+    connection.query(sql, [id, hashpw], (err, result) => {
+      if (err) {
+        console.log(err);
         res.redirect('/login');
-    }
-});
+      }
+  
+      if (result.length > 0) {
+        req.session.user = result[0];
+        res.setHeader('Set-Cookie', 'user=' + req.body.id);
+        res.redirect('/');
+      } else {
+        res.redirect('/login');
+      }
+    });
+  });
 
+// 로그아웃
 app.get('/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {
