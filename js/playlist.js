@@ -5,7 +5,7 @@ const postPlaylist = async () => {
     .then(data => {
         const list = document.querySelector('.list-item');
         data.forEach((row) => {
-            //if(document.cookie.indexOf('user=') === row["user_userid"]){
+            if(document.cookie === "user="+row["user_userid"]){
                 const item = document.createElement("div");
                 item.className = "container p-3 my-3 border";
 
@@ -46,7 +46,7 @@ const postPlaylist = async () => {
                 item.appendChild(wrapper);
 
                 list.append(item);
-            //}
+            }
         })
     })
     .catch(error => console.error('Error fetching data:', error));

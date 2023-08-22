@@ -4,7 +4,6 @@ var urlParams = new URLSearchParams(queryString);
 var dataStr = urlParams.get('data');
 var dataNum = parseInt(dataStr);
 
-
 //트랙 불러오기
 const postTrack = async () => {
     const response = await fetch('/api/getMusic')
@@ -41,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     postTrack();
 });
 
-
 //플레이리스트(회원)
 const showPlayList = async () => {
     if(document.cookie.indexOf('user=') !== -1){
@@ -61,7 +59,7 @@ const postPlaylist = async () => {
     .then(data => {
         const list = document.querySelector('.list-item');
         data.forEach((row) => {
-            //if(document.cookie.indexOf('user=') === row["user_userid"]){
+            if(document.cookie === "user="+row["user_userid"]){
                 const item = document.createElement("div");
                 item.className = "container p-3 my-3 border";
 
@@ -97,7 +95,7 @@ const postPlaylist = async () => {
                 item.appendChild(wrapper);
 
                 list.append(item);
-            //}
+            }
         })
     })
     .catch(error => console.error('Error fetching data:', error));
@@ -108,7 +106,6 @@ playListbtn.addEventListener("click", () => {
     showPlayList();
     postPlaylist();
 });
-
 
 // 트랙 전환 (prev, next)
 function prevlink(){
@@ -132,7 +129,6 @@ const nextbtn = document.getElementById("next");
 nextbtn.addEventListener("click", () => {
     nextlink();
 });
- 
 
 //음악 검색 
 function searchlink(){
