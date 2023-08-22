@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>track</title>
-    <link rel="stylesheet" href="../css/track.css">
+    <title>Weekly Music</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/css/tracklist.css">
 </head>
 <body>
     <!-- menu -->
@@ -17,45 +15,40 @@
     
     <div class="location">
         <!-- player -->
-        <div id="music-player">
-            <section>
-                <div class="cover-img"></div>
-        
-                <div class="song-details"></div>
+        <div class="wrapper">
+            <div class="img-area"></div>
+    
+            <div class="song-details"></div>
 
-                <div class="progress-area">
-                    <div class="progress-bar">
-                        <audio id="main-audio" src=""></audio>
-                    </div>
-        
-                    <div class="song-timer">
-                        <span class="current-time">0:00</span>
-                        <span class="max-duration">0:00</span>
-                    </div>
+            <div class="progress-area">
+                <div class="progress-bar">
+                    <audio id="main-audio" src=""></audio>
                 </div>
-        
-                <div class="controls">
-                    <a id="prev">
-                        <img id=playprev src="../images/backbutton.png" alt="play-prev">
-                    </a>
-                    <div class="play-pause">
-                        <a id="play">
-                            <img id=playmusic src="../images/playbutton.png" alt="play-pause">
-                        </a>
-                    </div>
-                    <a id="next">
-                        <img id=playnext src="../images/nextbutton.png" alt="play-next">
-                    </a>
+    
+                <div class="song-timer">
+                    <span class="current-time">0:00</span>
+                    <span class="max-duration">0:00</span>
                 </div>
-            </section>
+            </div>
+    
+            <div class="controls">
+                <img id="search" class="material-symbols-outlined" src="/images/search-Icon.png"></img>
+                <img id="prev" class="material-symbols-outlined" src="/images/backbutton.png"></img>
+                <div class="play-pause">
+                    <img class="material-symbols-outlined" src="/images/playbutton.png"></img>
+                </div>
+                <img id="next" class="material-symbols-outlined" src="/images/nextbutton.png"></img>
+                <img id="playlist" class="material-symbols-outlined" src="/images/hamburgerbtn.png"></img>
+            </div>
         </div>
 
         <!-- 플레이리스트(회원) -->
         <div class="play-list"></div>
     </div>
 
+    <link rel="stylesheet" href="/css/tracklist.css">
     <script src="../js/inputHeader.js"></script>
     <script src="/js/track.js"></script>
-    <script src="/js/playlist.js"></script>
+    <link rel="stylesheet" href="../css/track.css">
 </body>
 </html>

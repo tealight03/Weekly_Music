@@ -1,7 +1,3 @@
-body{
-    display: grid;
-}
-
 .location{
     display: flex;
     justify-content: center;
@@ -15,52 +11,52 @@ body{
   }
 }
 
-#music-player{
+body{
     display: grid;
-    grid-template-columns: 100%;
-    place-items: center;
-    margin: 30px;
 }
 
-section{
+.wrapper{
     width:600px;
     padding:25px 30px;
 }
 
-
-.cover-img{
-    width:100%;
-    height: 40vh;
-    overflow:hidden;
-    margin-top:30px;
-    border-radius:12px;
-    box-sizing:0px 6px 12px rgba(0,0,0,0.15);
+.progress-area .song-timer,
+.controls{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
 }
 
-.cover-img img{
+.img-area{
+    width:100%;
+    height:45vh;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+.img-area img{
     width:100%;
     height:100%;
     object-fit: cover;
 }
 
-
 .song-details{
     text-align: center;
-    margin:2vh 0 2vh 0;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
 .song-details .name{
-    font-size:21px
+    font-size:25px
 }
 
 .song-details .artist{
-    font-size:12px;
+    font-size:16px;
     opacity: 0.9;
 }
 
-
 .progress-area{
-    height: 8px;
+    height: 5px;
     width: 100%;
     border-radius: 50px;
     background: #f0f0f0;
@@ -72,13 +68,7 @@ section{
     width:0%;
     position: relative;
     border-radius: inherit;
-    background: #4e7ff1;
-}
-
-.progress-area .song-timer{
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
+    background: linear-gradient(90deg, #4e7ff1 0%, #8a5a8f 100%);
 }
 
 .progress-bar::before{
@@ -107,37 +97,44 @@ section{
 }
 .song-timer span{
     font-size:13px;
+    color:#515c6f;
 }
 
 .controls{
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
     margin: 5vh 10vh 2vh 10vh;
 }
-.controls #play{
-    cursor:pointer;
-}
-.controls #prev{
-    margin-right: -13px;
-    cursor:pointer;
-}
-.controls #next{
-    margin-left:-13px;
-    cursor:pointer;
-}
 
-#playprev{
-    width: 50px;
-    height: 50px;
-}
-
-#playmusic{
+.controls img{
     width: 45px;
     height: 45px;
+    cursor:pointer;
 }
 
-#playnext{
-    width: 50px;
-    height: 50px;
+.controls #prev{
+    margin-right: 16px;
+}
+.controls #next{
+    margin-left: 13px;
+}
+
+.controls .play-pause{
+    height:45px;
+    width:45px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.play-pause::before{
+    position:absolute;
+    content:"";
+    height:45px;
+    width:45px;
+}
+
+.play-pause img{
+    height:45px;
+    width:45px;
+    text-align:center;
+    position:absolute;
 }
