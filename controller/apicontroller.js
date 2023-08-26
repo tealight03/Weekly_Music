@@ -12,7 +12,7 @@ router.get('/getPlaylist', model.getPlaylist);
 router.get('/getMusic', model.getMusic);
 router.get('/getRecMusic', model.getRecMusic);
 router.get('/getTodayMusic', model.getTodayMusic);
-
+router.post('/searchMusic', model.searchMusic);
 router.post('/signup', model.signup);
 
 module.exports = router;

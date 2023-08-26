@@ -59,3 +59,15 @@ exports.getTodayMusic = (req, res) => {
         res.send(row);
     })
 }
+
+exports.searchMusic = (req, res) => {
+    const { word } = req.body;
+
+    const searchWord = `%${word}%`;
+
+    var sql = 'SELECT * FROM music WHERE music_name LIKE ? OR music_singer LIKE ?';
+    connection.query(sql, [searchWord, searchWord], (error, row) => {
+        if(error) throw error;
+        res.send(row);
+    })
+}

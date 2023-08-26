@@ -52,18 +52,18 @@ app.post('/login', (req, res) => {
 
     const sql = 'SELECT * FROM user WHERE userid = ? AND userpw = ?';
     connection.query(sql, [id, hashpw], (err, result) => {
-      if (err) {
-        console.log(err);
-        res.redirect('/login');
-      }
-  
-      if (result.length > 0) {
-        req.session.user = result[0];
-        res.setHeader('Set-Cookie', 'user=' + req.body.id);
-        res.redirect('/');
-      } else {
-        res.redirect('/login');
-      }
+        if (err) {
+            console.log(err);
+            res.redirect('/login');
+        }
+    
+        if (result.length > 0) {
+            req.session.user = result[0];
+            res.setHeader('Set-Cookie', 'user=' + req.body.id);
+            res.redirect('/');
+        } else {
+            res.redirect('/login');
+        }
     });
   });
 
