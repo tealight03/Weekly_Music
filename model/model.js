@@ -71,3 +71,25 @@ exports.searchMusic = (req, res) => {
         res.send(row);
     })
 }
+
+exports.delPlayList = (req, res) => {
+    const { index } = req.body;
+    var sql = 'DELETE FROM playlist WHERE music_idmusic = ?';
+    connection.query(sql, [index], (error, result) => {
+        if(error) throw error;
+        if (result.affectedRows > 0) {
+            return res.redirect('/mypage');
+        }
+    })
+}
+
+exports.addPlayList = (req, res) => {
+    const { user, index } = req.body;
+    var sql = 'INSERT INTO playlist (user_userid, music_idmusic) VALUES (?, ?)';
+    connection.query(sql, [user, index], (error, result) => {
+        if(error) throw error;
+        if(result.affectedRows > 0){
+            return res.redirect('/mypage');
+        }
+    })
+}

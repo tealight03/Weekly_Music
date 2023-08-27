@@ -14,5 +14,7 @@ router.get('/getRecMusic', model.getRecMusic);
 router.get('/getTodayMusic', model.getTodayMusic);
 router.post('/searchMusic', model.searchMusic);
 router.post('/signup', model.signup);
+router.post('/delPlayList', model.delPlayList);
+router.post('/addPlayList', model.addPlayList);
 
 module.exports = router;

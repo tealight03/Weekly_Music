@@ -23,6 +23,27 @@ const postUid = async () => {
     .catch(error => console.error('Error fetching data:', error));
 }
 
+//플레이리스트 삭제
+const delPlayList = async (index) => {
+    try {
+        const response = await fetch('/api/delPlayList', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ index: index })
+        });
+
+        if (response.ok) {
+            alert("음원이 플레이리스트에서 삭제되었습니다.")
+        } else {
+            console.error("서버 응답 에러");
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
 //플레이리스트
 const postPlaylist = async () => {
     const response = await fetch('/api/getPlaylist')
@@ -36,11 +57,6 @@ const postPlaylist = async () => {
 
                 const wrapper = document.createElement("div");
                 wrapper.className = "track"; 
-                (function(index) {
-                    wrapper.addEventListener('click', function() {
-                        location.href = '/track?data='+index;
-                    });
-                })(row["music_idmusic"]);
 
                 const cover = document.createElement("img");
                 cover.id = "cover";
@@ -48,6 +64,11 @@ const postPlaylist = async () => {
 
                 const musicInfo = document.createElement("div");
                 musicInfo.className = "music-info";
+                (function(index) {
+                    musicInfo.addEventListener('click', function() {
+                        location.href = '/track?data='+index;
+                    });
+                })(row["music_idmusic"]);
 
                 const title = document.createElement("div");
                 title.id = "title";
@@ -59,7 +80,12 @@ const postPlaylist = async () => {
 
                 const hambugerImg = document.createElement("img");
                 hambugerImg.id = "hambuger";
-                hambugerImg.src = "/images/hamburgerbtn.png";
+                hambugerImg.src = "/images/minusbutton.png";
+                (function(index) {
+                    hambugerImg.addEventListener('click', function() {
+                        delPlayList(index);
+                    });
+                })(row["music_idmusic"]);
 
                 musicInfo.appendChild(title);
                 musicInfo.appendChild(artist);

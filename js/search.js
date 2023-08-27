@@ -1,3 +1,24 @@
+//플레이리스트 추가
+const addPlayList = async (name, index) => {
+    try {
+        const response = await fetch('/api/addPlayList', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name: name, index: index })
+        });
+
+        if (response.ok) {
+            alert("음원이 플레이리스트에 추가되었습니다.")
+        } else {
+            console.error("서버 응답 에러");
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
 //전체 음악 리스트
 const postMusiclist = async () => {
     const response = await fetch('/api/getMusic')
@@ -10,11 +31,6 @@ const postMusiclist = async () => {
 
             const wrapper = document.createElement("div");
             wrapper.className = "track"; 
-            (function(index) {
-                wrapper.addEventListener('click', function() {
-                    location.href = '/track?data='+index;
-                });
-            })(row["idmusic"]);
 
             const cover = document.createElement("img");
             cover.id = "cover";
@@ -22,6 +38,11 @@ const postMusiclist = async () => {
 
             const musicInfo = document.createElement("div");
             musicInfo.className = "music-info";
+            (function(index) {
+                musicInfo.addEventListener('click', function() {
+                    location.href = '/track?data='+index;
+                });
+            })(row["idmusic"]);
 
             const title = document.createElement("div");
             title.id = "title";
@@ -33,7 +54,21 @@ const postMusiclist = async () => {
 
             const hambugerImg = document.createElement("img");
             hambugerImg.id = "hambuger";
-            hambugerImg.src = "/images/hamburgerbtn.png";
+            hambugerImg.src = "/images/plusbutton.png";
+            (function(index) {
+                if(document.cookie.indexOf('user=') === -1){
+                    hambugerImg.addEventListener('click', function() {
+                        alert("로그인 후 이용 가능합니다.");
+                        window.location.href = '/login';
+                    });
+                }else{
+                    const cookie = document.cookie;
+                    const name = cookie.split('=')[1];
+                    hambugerImg.addEventListener('click', function() {
+                        addPlayList(name, index);
+                    });
+                }
+            })(row["idmusic"]);
 
             musicInfo.appendChild(title);
             musicInfo.appendChild(artist);
