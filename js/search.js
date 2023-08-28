@@ -1,12 +1,12 @@
 //플레이리스트 추가
-const addPlayList = async (name, index) => {
+const addPlayList = async (user, index) => {
     try {
         const response = await fetch('/api/addPlayList', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ name: name, index: index })
+            body: JSON.stringify({ user: user, index: index })
         });
 
         if (response.ok) {
@@ -63,9 +63,9 @@ const postMusiclist = async () => {
                     });
                 }else{
                     const cookie = document.cookie;
-                    const name = cookie.split('=')[1];
+                    const user = cookie.split('=')[1];
                     hambugerImg.addEventListener('click', function() {
-                        addPlayList(name, index);
+                        addPlayList(user, index);
                     });
                 }
             })(row["idmusic"]);
